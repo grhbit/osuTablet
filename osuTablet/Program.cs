@@ -18,10 +18,15 @@ namespace osuTablet
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            var resolution = Screen.PrimaryScreen.Bounds;
             InputAssistant.SetBoundingBox(resolution.Location, resolution.Size);
 
+            var cu = new CommunicationUdp();
+            cu.Open(5000);
+
             Application.Run(new MainForm());
+
+            cu.Close();
         }
 
     }
