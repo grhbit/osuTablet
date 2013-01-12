@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -16,7 +17,12 @@ namespace osuTablet
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            Rectangle resolution = Screen.PrimaryScreen.Bounds;
+            InputAssistant.SetBoundingBox(resolution.Location, resolution.Size);
+
             Application.Run(new MainForm());
         }
+
     }
 }
