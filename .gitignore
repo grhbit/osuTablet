@@ -1,3 +1,20 @@
+## Ignore Xcode User-specific files, build results
+*~.nib
+DerivedData/
+build/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+!default.pbxuser
+!default.mode1v3
+!default.mode2v3
+!default.perspectivev3
+!xcshemes
+xcuserdata
+!xcshareddata
+*.moved-aside
+
 ## Windonws.gitignore
 
 # Windows image file caches
