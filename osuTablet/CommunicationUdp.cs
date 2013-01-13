@@ -73,7 +73,29 @@ namespace osuTablet
 
                 var str = Encoding.ASCII.GetString(data);
 
-                System.Console.WriteLine(str);
+                foreach (byte i in data)
+                {
+                    System.Console.Write(i);
+                    System.Console.Write(' ');
+                }
+
+                System.Console.WriteLine("");
+
+                foreach (char i in str)
+                {
+                    System.Console.Write(i);
+                    System.Console.Write(' ');
+                }
+
+                System.Console.WriteLine("");
+
+
+                Point point = new Point();
+                point.X = Int32.Parse(Encoding.Default.GetString(data, 0, 3));
+
+                point.Y = Int32.Parse(Encoding.Default.GetString(data, 3, 3));
+
+                InputAssistant.MoveCursor(point);
 
                 if (ReceiveDataCallback != null)
                 {
